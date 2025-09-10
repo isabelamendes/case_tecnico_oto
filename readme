@@ -1,0 +1,65 @@
+# 📦 Chunk Processor
+
+Um framework Python para processar arquivos CSV em chunks, com suporte a pipelines de funções, logging detalhado e arquitetura extensível para outros formatos (Excel, Parquet, etc).
+
+## ✨ Funcionalidades
+
+✅ Processamento em chunks (grandes arquivos sem sobrecarregar memória)
+
+✅ Aplicação de pipeline de funções de transformação por chunk
+
+✅ Logging automático: linhas processadas, valores nulos, tempo por chunk
+
+✅ Estrutura extensível para outros formatos de arquivo
+
+## 🗂 Estrutura do projeto
+chunk_processor/
+│
+├─ chunk_processor.py        # Classe base e extensão CSV
+├─ process_script.py         # Exemplo de uso com pipeline
+└─ README.md                 # Este arquivo
+
+## ⚡ Instalação
+
+Clone o repositório:
+
+git clone https://github.com/isabelamendes/chunk-processor.git
+cd chunk-processor
+
+
+Instale as dependências:
+
+pip install pandas chardet
+
+🛠 Exemplo de uso
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/chunk-processor.git
+cd chunk-processor
+
+
+## 📖 Como funciona
+
+Leitura em chunks: cada bloco de linhas é carregado em memória de forma controlada
+
+Aplicação de funções: pipeline de funções é aplicado a cada chunk
+
+Escrita incremental: para CSV, cada chunk processado é salvo diretamente
+
+Logging detalhado: tempo de processamento, linhas nulas, total de chunks
+
+
+## 🔧 Extensibilidade
+
+Crie subclasses de ChunkProcessor para novos formatos:
+
+Ex: ChunkProcessorExcel, ChunkProcessorParquet
+
+Implemente os métodos abstratos:
+
+read_chunks()
+
+process()
+
+O logging e o pipeline continuam funcionando sem alterações.
